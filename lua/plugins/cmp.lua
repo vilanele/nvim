@@ -39,14 +39,14 @@ M.config = function()
 		mapping = {
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
-					cmp.select_next_item()
-				-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-				-- that way you will only jump inside the snippet region
-				-- elseif luasnip.expand_or_jumpable() then
-				--   luasnip.expand_or_jump()
-				-- elseif has_words_before() then
-				-- 	-- cmp.complete()
-				-- 	fallback()
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+					-- that way you will only jump inside the snippet region
+					-- elseif luasnip.expand_or_jumpable() then
+					--   luasnip.expand_or_jump()
+					-- elseif has_words_before() then
+					-- 	-- cmp.complete()
+					-- 	fallback()
 				else
 					fallback()
 				end
@@ -67,9 +67,9 @@ M.config = function()
 			end, { "i", "s" }),
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
-					cmp.select_prev_item()
-				-- elseif luasnip.jumpable(-1) then
-				-- 	luasnip.jump(-1)
+					cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+					-- elseif luasnip.jumpable(-1) then
+					-- 	luasnip.jump(-1)
 				else
 					fallback()
 				end
@@ -180,11 +180,12 @@ M.config = function()
 		--     -- ... Your other configuration ...
 		-- },
 		sources = cmp.config.sources({
+			{ name = "jupynium", priority = 5 },
 			{ name = "nvim_lsp", priority = 2 },
 			-- { name = "nvim_lua" },
-			{ name = "luasnip", priority = 3 },
-			{ name = "buffer", priority = 1 },
-			{ name = "path", priority = 4 },
+			{ name = "luasnip",  priority = 3 },
+			{ name = "buffer",   priority = 1 },
+			{ name = "path",     priority = 4 },
 		}),
 		-- ... Your other configuration ...
 

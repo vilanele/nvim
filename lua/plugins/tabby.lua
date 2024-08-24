@@ -79,8 +79,8 @@ M = {
 		-- require("tabby.tabline").set(function(line) end, {})
 	end,
 	keys = {
-		{ "<S-h>", "<cmd>tabprevious<cr>", "n" },
-		{ "<S-l>", "<cmd>tabnext<cr>", "n" },
+		-- { "<C-a>", "<cmd>tabprevious<cr>", "i" },
+		-- { "<C-q>", "<cmd>tabnext<cr>", "kkkkkkkk	i" },
 	},
 }
 

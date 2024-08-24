@@ -39,16 +39,19 @@ return {
 			actions.close(prompt_bufnr)
 			vim.cmd("leftabove vsplit " .. selected_entry.value)
 		end
+
 		function OpenRight(prompt_bufnr)
 			local selected_entry = action_state.get_selected_entry()
 			actions.close(prompt_bufnr)
 			vim.cmd("rightbelow vsplit " .. selected_entry.value)
 		end
+
 		function OpenDown(prompt_bufnr)
 			local selected_entry = action_state.get_selected_entry()
 			actions.close(prompt_bufnr)
 			vim.cmd("rightbelow split " .. selected_entry.value)
 		end
+
 		function OpenUp(prompt_bufnr)
 			local selected_entry = action_state.get_selected_entry()
 			actions.close(prompt_bufnr)
@@ -61,6 +64,78 @@ return {
 		-- 	vim.api.nvim_buf_delete(entry.bufnr, {})
 		-- 	picker:refresh()
 		-- end
+		--
+
+		local function get_filetypes()
+			return {
+				"systemd",
+				"bash",
+				"zsh",
+				"lua",
+				"python",
+				"javascript",
+				"html",
+				"css",
+				-- add more as needed
+			}
+		end
+
+		local pickers = require("telescope.pickers")
+		local finders = require("telescope.finders")
+		local actions = require("telescope.actions")
+		local action_state = require("telescope.actions.state")
+		local conf = require("telescope.config").values
+
+		local function set_filetype_picker(opts)
+			opts = opts or {}
+			pickers.new(opts, {
+				prompt_title = "Select Filetype",
+				finder = finders.new_table {
+					results = get_filetypes(),
+				},
+				sorter = conf.generic_sorter(opts),
+				attach_mappings = function(prompt_bufnr, map)
+					actions.select_default:replace(function()
+						actions.close(prompt_bufnr)
+						local selection = action_state.get_selected_entry()
+						-- print(vim.inspect(selection))
+						vim.notify("Filetype set to: " .. selection[1], vim.log.levels.INFO)
+						vim.cmd("set filetype=" .. selection[1])
+
+						-- vim.api.nvim_put({ selection[1] }, "", false, true)
+					end)
+					return true
+				end,
+				-- attach_mappings = function(prompt_bufnr, map)
+				-- 	print("Bonjoour")
+				-- 	local selection = action_state.get_selected_entry()
+				-- 	actions.close(prompt_bufnr)
+				-- vim.cmd("set filetype=" .. selection[1])
+				-- 	-- vim.cmd("syntax on")
+				-- 	-- vim.cmd("filetype detect")
+				-- 	vim.notify("Filetype set to: " .. selection[1], vim.log.levels.INFO)
+				-- 	-- if selection then
+				-- 	-- 	vim.bo.filetype = selection[1]
+				-- 	vim.notify("Filetype set to: " .. selection[1], vim.log.levels.INFO)
+				-- 	-- end
+				--
+				-- 	-- map("i", "<CR>", set_filetype)
+				-- 	-- map("n", "<CR>", set_filetype)
+				-- 	-- set_filetype()
+				--
+				-- 	return true
+				-- end,
+			}):find()
+		end
+
+		vim.api.nvim_create_user_command('SetFiletype', function()
+			set_filetype_picker()
+		end, {})
+
+		vim.api.nvim_set_keymap('n', ',,f', ':SetFiletype<CR>',
+			{ noremap = true, silent = true })
+
+
 
 		require("telescope").setup({
 			defaults = {
@@ -161,7 +236,7 @@ return {
 		end)
 		vim.keymap.set("n", ",m", function()
 			find_files({
-				cwd = "/home/vilanele/pconf",
+				cwd = "/home/vilanele/conf",
 			})
 		end)
 		vim.keymap.set("n", ",,b", function()

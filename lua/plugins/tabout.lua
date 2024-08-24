@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		config = function()
 			vim.api.nvim_set_keymap("i", "<C-o>", "<Plug>(TaboutMulti)", { silent = true })
-			vim.api.nvim_set_keymap("i", "<C-i>", "<Plug>(TaboutBackMlti)", { silent = true })
+			vim.api.nvim_set_keymap("i", "<C-i>", "<Plug>(TaboutBackMulti)", { silent = true })
 			require("tabout").setup({
 				tabkey = "<C-o>", -- key to trigger tabout, set to an empty string to disable
 				backwards_tabkey = "<C-i>", -- key to trigger backwards tabout, set to an empty string to disable

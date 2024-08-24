@@ -19,6 +19,13 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+vim.keymap.set("n", "<C-p>", ":tabprevious<cr>")
+vim.keymap.set("n", "<C-n>", ":tabnext<cr>")
+vim.keymap.set("i", "<C-p>", "<esc>:tabprevious<cr>")
+vim.keymap.set("i", "<C-n>", "<esc>:tabnext<cr>")
+vim.keymap.set("t", "<C-p>", [[<C-\><C-n>:tabprevious<cr>]])
+vim.keymap.set("t", "<C-n>", [[<C-\><C-n>:tabnext<cr>]])
 -- Buffer splits
 vim.keymap.set("n", "sh", ":leftabove vsplit<cr>")
 vim.keymap.set("n", "sl", ":rightbelow vsplit<cr>")
@@ -37,6 +44,31 @@ vim.keymap.set("n", "t<Left>", ":leftabove vsplit | term<cr>")
 vim.keymap.set("n", "t<Right>", ":rightbelow vsplit | term<cr>")
 vim.keymap.set("n", "t<Down>", ":rightbelow split | term<cr>")
 vim.keymap.set("n", "t<Up>", ":leftabove split | term<cr>")
+vim.keymap.set("n", "ma", "@")
+
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+vim.g.molten_virt_text_output = true
+vim.g.molten_output_virt_lines = true
+vim.g.molten_auto_open_output = false
+vim.g.molten_wrap_output = false
+vim.g.molten_virt_text_max_lines = 20
+
+-- vim.keymap.set("n", ",r", ":MoltenReevaluateCell<cr>")
+-- vim.keymap.set("v", ",v", ":<C-u>MoltenEvaluateVisual<cr>", {silent = true, desc = "Evaluate visual selection"})
+-- vim.keymap.set("n", ",n", ":MoltenNext<cr>zz")
+-- vim.keymap.set("n", ",p", ":MoltenPrev<cr>zz")
+vim.keymap.set("n", ",o", ":MoltenShowOutput<cr>")
+
+local runner = require("quarto.runner")
+vim.keymap.set("n", ",rc", runner.run_cell, { desc = "run cell", silent = true })
+vim.keymap.set("n", ",ra", runner.run_above, { desc = "run cell and above", silent = true })
+vim.keymap.set("n", ",rb", runner.run_below, { desc = "run cell and below", silent = true })
+vim.keymap.set("n", ",rA", runner.run_all, { desc = "run all cells", silent = true })
+vim.keymap.set("n", ",rl", runner.run_line, { desc = "run line", silent = true })
+vim.keymap.set("v", ",r", runner.run_range, { desc = "run visual range", silent = true })
+vim.keymap.set("n", ",RA", function()
+	runner.run_all(true)
+end, { desc = "run all cells of all languages", silent = true })
 
 -- vim.keymap.set("i", "ii", "<esc>o")
 

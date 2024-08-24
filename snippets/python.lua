@@ -24,14 +24,45 @@ local newsnip = function(trig, nodes, opts)
 end
 
 newsnip(
+    "oi",
+    fmt(
+		[[{}-> int]],
+        { t(" ") },
+        { delimiters = "{}" }
+    )
+)
+
+newsnip(
+    "ss",
+    fmt(
+        [[
+            <>: str<>
+        ]],
+        { i(1, "name"), i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "ii",
+    fmt(
+        [[
+            <>: int<>
+        ]],
+        { i(1, "name"), i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
 	"def",
 	fmt(
 		[[
-		def <>(<>):
+		def <>(<>)<>:
 			<>
 		<>
     ]],
-		{ i(1, "fname"), i(2), i(3, "body"), i(0) },
+		{ i(1, "fname"), i(2), i(3), i(4, "pass"), i(0) },
 		{ delimiters = "<>" }
 	)
 )
@@ -48,51 +79,6 @@ newsnip(
 	)
 )
 
-newsnip({
-	trig = "test",
-	descr = "A test trigger",
-	regTrig = false,
-}, {
-	t("Hello World!!!"),
-})
-
-newsnip("hi", { t("Bonjour") })
-
-newsnip("ff", {
-	t("\\frac{"),
-	i(1),
-	t("}{"),
-	i(2),
-	t("}"),
-})
-
-newsnip(
-	"frac",
-	fmt(
-		[[
-      \begin{equation}
-        <>
-        <>
-        <>
-      \end{equation}
-      
-      <>
-    ]],
-		{ i(1, "equation"), rep(1), rep(1), i(0) },
-		{ delimiters = "<>" }
-	)
-)
-
-newsnip(
-	"tii",
-	fmt(
-		[[
-      \textit{<>}<>
-    ]],
-		{ d(1, get_visual), i(0) },
-		{ delimiters = "<>" }
-	)
-)
 
 newsnip(
 	"def",
@@ -113,7 +99,7 @@ newsnip(
       class <>(<>):
         <>
     ]],
-		{ i(1, "cname"), i(2), i(3, "body") },
+		{ i(1, "cname"), i(2), i(3, "pass") },
 		{ delimiters = "<>" }
 	)
 )
@@ -122,10 +108,10 @@ newsnip(
 	"ini",
 	fmt(
 		[[
-      def __init__(self,<>):
+      def __init__(self<>):
         <>
     ]],
-		{ i(1, "args"), i(2, "body") },
+		{ i(1, ""), i(2, "pass") },
 		{ delimiters = "<>" }
 	)
 )
@@ -140,6 +126,30 @@ newsnip(
 		{ i(1, ""), i(0) },
 		{ delimiters = "<>" }
 	)
+)
+
+newsnip(
+    "met",
+    fmt(
+        [[
+			def <>(self):
+				<>
+        ]],
+        { i(1, "name"),  i(2, "body") },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "fr",
+    fmt(
+        [[
+			from <> import <>
+			<>
+        ]],
+        { i(1, "module"), i(2, "symbols"), i(0) },
+        { delimiters = "<>" }
+    )
 )
 
 ---End---
