@@ -236,7 +236,7 @@ newsnip(
 	fmt(
 		[[
       while (<>) {
-          <>  
+          <>
       }
       <>
     ]],
@@ -467,38 +467,88 @@ newsnip(
 )
 
 newsnip(
-    "<>",
-    fmt(
-        [[
+	"<>",
+	fmt(
+		[[
 		<>
 			{}
 		</>
         ]],
-        { i(1) },
-        { delimiters = "{}" }
-    )
+		{ i(1) },
+		{ delimiters = "{}" }
+	)
 )
 
 newsnip(
-    "nimp",
-    fmt(
-        [[
+	"nimp",
+	fmt(
+		[[
             import { <> }
         ]],
-        { i(1) },
-        { delimiters = "<>" }
-    )
+		{ i(1) },
+		{ delimiters = "<>" }
+	)
 )
 
 newsnip(
-    "imp",
-    fmt(
-        [[
+	"imp",
+	fmt(
+		[[
             import { <> }
         ]],
-        { i(1) },
-        { delimiters = "<>" }
-    )
+		{ i(1) },
+		{ delimiters = "<>" }
+	)
+)
+
+newsnip(
+	"frag",
+	fmt(
+		[[
+		<Fragment>
+			{}
+		</Fragment>
+        ]],
+		{ i(1) },
+		{ delimiters = "{}" }
+	)
+)
+
+newsnip(
+	"state",
+	fmt(
+		[[
+		const [{}, set{}] = useState<{}>({});
+		{}
+        ]],
+		{ i(1), rep(1), i(2), i(3, "null"), i(0) },
+		{ delimiters = "{}" }
+	)
+)
+
+newsnip(
+	"ref",
+	fmt(
+		[[
+		const {} = useRef<{}>({});
+		{}
+        ]],
+		{ i(1), i(2), i(3), i(0) },
+		{ delimiters = "{}" }
+	)
+)
+
+newsnip(
+	"int",
+	fmt(
+		[[
+        interface <> {
+			<>	
+		}<>
+        ]],
+		{ i(1, "name"), i(2), i(0) },
+		{ delimiters = "<>" }
+	)
 )
 
 ---End---

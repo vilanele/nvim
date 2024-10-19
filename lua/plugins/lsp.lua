@@ -35,6 +35,7 @@ return {
 		require("lspconfig").pyright.setup({
 			completion = false,
 		})
+		require('lspconfig').kotlin_language_server.setup({})
 		require("lspconfig").jedi_language_server.setup({
 			capabilities = capabilities,
 			filetypes = {
@@ -52,6 +53,13 @@ return {
 		-- LUA
 		require("lspconfig").lua_ls.setup({
 			capabilities = capabilities,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' }
+					}
+				}
+			}
 		})
 
 		-- TSSERVER
@@ -137,7 +145,7 @@ return {
 			},
 		})
 		--Enable (broadcasting) snippet capability for completion
-		
+
 		-- EMMET
 		require("lspconfig").emmet_language_server.setup({
 			capabilities = capa,

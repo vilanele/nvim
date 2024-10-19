@@ -6,7 +6,7 @@ M = {
 
 		require("outline").setup({
 			preview_window = { auto_preview = false },
-			outline_window = { position = 'right' }
+			outline_window = { position = 'left' }
 			-- Your setup opts here (leave empty to use defaults)
 		})
 	end,

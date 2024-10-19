@@ -24,34 +24,34 @@ local newsnip = function(trig, nodes, opts)
 end
 
 newsnip(
-    "oi",
-    fmt(
+	"oi",
+	fmt(
 		[[{}-> int]],
-        { t(" ") },
-        { delimiters = "{}" }
-    )
+		{ t(" ") },
+		{ delimiters = "{}" }
+	)
 )
 
 newsnip(
-    "ss",
-    fmt(
-        [[
+	"ss",
+	fmt(
+		[[
             <>: str<>
         ]],
-        { i(1, "name"), i(0) },
-        { delimiters = "<>" }
-    )
+		{ i(1, "name"), i(0) },
+		{ delimiters = "<>" }
+	)
 )
 
 newsnip(
-    "ii",
-    fmt(
-        [[
+	"ii",
+	fmt(
+		[[
             <>: int<>
         ]],
-        { i(1, "name"), i(0) },
-        { delimiters = "<>" }
-    )
+		{ i(1, "name"), i(0) },
+		{ delimiters = "<>" }
+	)
 )
 
 newsnip(
@@ -129,27 +129,39 @@ newsnip(
 )
 
 newsnip(
-    "met",
-    fmt(
-        [[
+	"met",
+	fmt(
+		[[
 			def <>(self):
 				<>
         ]],
-        { i(1, "name"),  i(2, "body") },
-        { delimiters = "<>" }
-    )
+		{ i(1, "name"), i(2, "body") },
+		{ delimiters = "<>" }
+	)
 )
 
 newsnip(
-    "fr",
-    fmt(
-        [[
+	"fr",
+	fmt(
+		[[
 			from <> import <>
 			<>
         ]],
-        { i(1, "module"), i(2, "symbols"), i(0) },
-        { delimiters = "<>" }
-    )
+		{ i(1, "module"), i(2, "symbols"), i(0) },
+		{ delimiters = "<>" }
+	)
+)
+
+newsnip(
+	"nc",
+	fmt(
+		[[
+        # %%
+		<>
+        ]],
+		{ i(0) },
+		{ delimiters = "<>" }
+	)
 )
 
 ---End---

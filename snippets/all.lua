@@ -66,38 +66,50 @@ newsnip(
 	)
 )
 
--- newsnip(
--- 	"i",
--- 	fmt(
--- 		[[
---       i(<>, "<>")
---     ]],
--- 		{ i(1, "n"), i(2, "desc") },
--- 		{ delimiters = "<>" }
--- 	)
--- )
---
--- newsnip(
--- 	"(",
--- 	fmt(
--- 		[[
---       (<>)<>
---     ]],
--- 		{ i(1), i(0) },
--- 		{ delimiters = "<>" }
--- 	)
--- )
---
--- newsnip(
--- 	'"',
--- 	fmt(
--- 		[[
---       "<>"<>
---     ]],
--- 		{ i(1), i(0) },
--- 		{ delimiters = "<>" }
--- 	)
--- )
+newsnip(
+	"nmas",
+	fmt(
+		[=[
+      newautosnip(
+          "-;",
+          fmt(
+              [[
+                  -;
+              ]],
+              { -; },
+              {delimiters = "<>" }
+          ),
+		  { condition = in_mathzone }
+      )
+    ]=],
+		{ i(1, "trig"), i(2), i(3, "nodes") },
+		{ delimiters = "-;" }
+	)
+)
+
+
+newsnip(
+	"nms",
+	fmt(
+		[=[
+      newsnip(
+          "-;",
+          fmt(
+              [[
+                  -;
+              ]],
+              { -; },
+              {delimiters = "<>" }
+          ),
+		  { condition = in_mathzone }
+      )
+    ]=],
+		{ i(1, "trig"), i(2), i(3, "nodes") },
+		{ delimiters = "-;" }
+	)
+)
+
+
 
 ---End---
 

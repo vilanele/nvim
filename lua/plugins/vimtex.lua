@@ -11,6 +11,6 @@ return {
 		vim.keymap.set("n", ",,t", ":VimtexTocToggle<cr>")
 		vim.keymap.set("n", ",,l", ":VimtexCompile<cr>")
 		vim.keymap.set("n", ",,z", ":VimtexView<cr>")
-		vim.keymap.set("n", ",,e", ":VimtexErrors<cr>")
+		vim.keymap.set("n", ",,q", ":VimtexErrors<cr>")
 	end,
 }

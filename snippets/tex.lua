@@ -18,16 +18,23 @@ local get_visual = function(args, parent)
 end
 
 local snippets = {}
-local autosnippets = {}
 
 local newsnip = function(trig, nodes, opts)
 	table.insert(snippets, s(trig, nodes, opts))
 end
 
-local newautosnip = function(trig, nodes, opts)
-	table.insert(autosnippets, s(trig, nodes, opts))
-end
+newsnip(
+	"mm",
+	fmt(
+		[[
+            $<>$<>	
+        ]],
+		{ i(1), i(0) },
+		{ delimiters = "<>" }
+	)
+)
+
 
 ---End---
 
-return snippets, autosnippets
+return snippets

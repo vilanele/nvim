@@ -18,26 +18,52 @@ local get_visual = function(args, parent)
 end
 
 local snippets = {}
+local autosnippets = {}
 
 local newsnip = function(trig, nodes, opts)
 	table.insert(snippets, s(trig, nodes, opts))
 end
 
+local newautosnip = function(trig, nodes, opts)
+	table.insert(autosnippets, s(trig, nodes, opts))
+end
+
 newsnip(
-	"beg",
+	"forl",
 	fmt(
 		[[
-      \begin{<>}
-        <>
-      \end{<>}
+            for <> from <> to <> list <>
+			<>
+        ]],
+		{ i(1), i(2), i(3), i(4), i(0) },
+		{ delimiters = "<>" }
+	)
+)
 
-      <>
-    ]],
-		{ i(1, "env"), i(2), rep(1), i(0) },
+newsnip(
+	"nc",
+	fmt(
+		[[
+		# %%
+		<>
+        ]],
+		{ i(0) },
+		{ delimiters = "<>" }
+	)
+)
+
+newsnip(
+	"md",
+	fmt(
+		[[
+        # %% [md]
+		<>
+        ]],
+		{ i(0) },
 		{ delimiters = "<>" }
 	)
 )
 
 ---End---
 
-return snippets
+return snippets, autosnippets

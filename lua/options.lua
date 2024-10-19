@@ -8,6 +8,7 @@ vim.o.smartindent = false
 vim.o.background = "dark"
 vim.o.foldenable = true
 vim.g.autoformat = false
+vim.g.tex_flavor = "latex"
 vim.g.termguicolors = true
 vim.opt.winbar = "global"
 vim.opt.laststatus = 3
@@ -45,6 +46,7 @@ vim.keymap.set("n", "t<Right>", ":rightbelow vsplit | term<cr>")
 vim.keymap.set("n", "t<Down>", ":rightbelow split | term<cr>")
 vim.keymap.set("n", "t<Up>", ":leftabove split | term<cr>")
 vim.keymap.set("n", "ma", "@")
+vim.keymap.set("n", ",,f", ":Neotree reveal filesystem right<cr>")
 
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
 vim.g.molten_virt_text_output = true
@@ -89,6 +91,12 @@ vim.cmd('autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"')
 vim.cmd([[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> <Esc>/---End---<CR><Esc>kzzO<CR>]])
 vim.cmd([[autocmd BufWinEnter,WinEnter term://* startinsert]])
 vim.cmd([[autocmd BufRead,BufNewFile *.sage set filetype=python]])
+
+vim.api.nvim_create_autocmd({ "DiagnosticChanged" }, {
+	callback = function()
+		vim.diagnostic.setloclist({ open = false }) -- Update location list and open it
+	end
+})
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = "*",
 -- 	callback = function()
