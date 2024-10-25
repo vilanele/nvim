@@ -28,17 +28,6 @@ local newautosnip = function(trig, nodes, opts)
 	table.insert(autosnippets, s(trig, nodes, opts))
 end
 
-newsnip(
-	"forl",
-	fmt(
-		[[
-		for <> from <> to <> list <>
-			<>
-        ]],
-		{ i(1), i(2), i(3), i(4), i(0) },
-		{ delimiters = "<>" }
-	)
-)
 
 newsnip(
 	"nc",
@@ -64,58 +53,6 @@ newsnip(
 	)
 )
 
-newsnip(
-	"if",
-	fmt(
-		[[
-		if <> then (
-			<>
-		) <>
-        ]],
-		{ i(1, "condition"), i(2), i(0) },
-		{ delimiters = "<>" }
-	)
-)
-
-newsnip(
-	"else",
-	fmt(
-		[[
-		else (
-			<>
-		)<>
-        ]],
-		{ i(1), i(0) },
-		{ delimiters = "<>" }
-	)
-)
-
-newsnip(
-	"elif",
-	fmt(
-		[[
-		else if <> then (
-			<>
-		) <>
-        ]],
-		{ i(1, "condition"), i(2), i(0) },
-		{ delimiters = "<>" }
-	)
-)
-
-newsnip(
-	"fun",
-	fmt(
-		[[
-		{} = {} -> (
-			{}
-		)
-		{}
-        ]],
-		{ i(1, "name"), i(2), i(3), i(0) },
-		{ delimiters = "{}" }
-	)
-)
 
 ---End---
 

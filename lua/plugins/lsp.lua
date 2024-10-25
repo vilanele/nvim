@@ -31,24 +31,28 @@ return {
 		vim.keymap.set("n", ",,e", "<cmd>lua vim.diagnostic.goto_prev({float =  true})<cr>")
 		vim.diagnostic.config({ virtual_text = false, float = { border = "rounded" } })
 
+		require 'lspconfig'.vimls.setup {}
+		require 'lspconfig'.prolog_ls.setup {}
+
 		-- PYTHON
 		require("lspconfig").pyright.setup({
 			completion = false,
 		})
 		require('lspconfig').kotlin_language_server.setup({})
-		require("lspconfig").jedi_language_server.setup({
-			capabilities = capabilities,
-			filetypes = {
-				"python",
-				"cython",
-				"pyrex",
-			},
-		})
+		-- require("lspconfig").jedi_language_server.setup({
+		-- 	capabilities = capabilities,
+		-- 	filetypes = {
+		-- 		"python",
+		-- 		"cython",
+		-- 		"pyrex",
+		-- 	},
+		-- })
 
 		-- LATEX
 		require("lspconfig").texlab.setup({
 			capabilities = capabilities,
 		})
+		require 'lspconfig'.clangd.setup {}
 
 		-- LUA
 		require("lspconfig").lua_ls.setup({
@@ -128,6 +132,8 @@ return {
 		require("lspconfig").bashls.setup({
 			filetypes = { "sh", "bash", "zsh" },
 		})
+		require('lspconfig').julials.setup({})
+
 
 		-- JSON
 		require("lspconfig").jsonls.setup({

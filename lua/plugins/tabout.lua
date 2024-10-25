@@ -3,8 +3,8 @@ return {
 		"abecodes/tabout.nvim",
 		lazy = false,
 		config = function()
-			vim.api.nvim_set_keymap("i", "<C-o>", "<Plug>(TaboutMulti)", { silent = true })
-			vim.api.nvim_set_keymap("i", "<C-i>", "<Plug>(TaboutBackMulti)", { silent = true })
+			-- vim.api.nvim_set_keymap("i", "<C-o>", "<Plug>(Tabout)", { silent = true })
+			-- vim.api.nvim_set_keymap("i", "<C-i>", "<Plug>(TaboutBack)", { silent = true })
 			require("tabout").setup({
 				tabkey = "<C-o>", -- key to trigger tabout, set to an empty string to disable
 				backwards_tabkey = "<C-i>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -31,7 +31,7 @@ return {
 			"L3MON4D3/LuaSnip",
 			"hrsh7th/nvim-cmp",
 		},
-		opt = true, -- Set this to true if the plugin is optional
+		opt = true,        -- Set this to true if the plugin is optional
 		event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
 		priority = 1000,
 	},
