@@ -19,16 +19,23 @@ M = {
 			ext_opts = {
 				[require("luasnip.util.types").choiceNode] = {
 					active = {
-						virt_text = { { "o", "GruvBoxOrange" } },
+						virt_text = { { "●", "red" } },
 					},
+					hl_mode = "combine"
 				},
+				[require("luasnip.util.types").insertNode] = {
+					active = {
+						virt_text = { { "●", "blue" } }
+					},
+					hl_mode = "combine"
+				}
 			},
 		})
 		require("luasnip/loaders/from_vscode").lazy_load()
-		vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
-		vim.api.nvim_set_keymap("s", "<C-n>", "<Plug>luasnip-next-choice", {})
-		vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
-		vim.api.nvim_set_keymap("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
+		vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>luasnip-next-choice", {})
+		vim.api.nvim_set_keymap("s", "<C-j>", "<Plug>luasnip-next-choice", {})
+		vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>luasnip-prev-choice", {})
+		vim.api.nvim_set_keymap("s", "<C-k>", "<Plug>luasnip-prev-choice", {})
 		-- require('luasnip.loaders.from_snipmate').lazy_load({paths = "/home/vilanele/.config/nvim/snippets"})
 	end,
 }

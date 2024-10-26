@@ -51,3 +51,8 @@ vim.keymap.set("n", ";k", "[j")
 vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>")
 vim.keymap.set("n", "gD", ":lua vim.lsp.buf.declaration()<cr>")
 vim.keymap.set("n", "gr", ":lua vim.lsp.buf.rename()<cr>")
+
+
+-- Luasnip
+--
+vim.keymap.set("i", "<c-u>", '<cmd>lua require("luasnip.extras.select_choice")()<cr>')
