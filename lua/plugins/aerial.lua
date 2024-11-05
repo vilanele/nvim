@@ -1,7 +1,9 @@
 M = {
 
 	"stevearc/aerial.nvim",
-	opts = {},
+	opts = {
+		filter_kind = false
+	},
 	-- Optional dependencies
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",

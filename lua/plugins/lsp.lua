@@ -5,26 +5,25 @@ return {
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
-		-- local configs = require("lspconfig.configs")
-		-- if not configs.systemd_ls then
-		-- 	configs.systemd_ls = {
-		-- 		default_config = {
-		-- 			cmd = { "systemd-language-server" },
-		-- 			filetypes = { "systemd" },
-		-- 			root_dir = function()
-		-- 				return nil
-		-- 			end,
-		-- 			single_file_support = true,
-		-- 			settings = {},
-		-- 		},
-		-- 		docs = {
-		-- 			description = [[]],
-		-- 		},
-		-- 	}
-		-- end
-		--
-		-- require("lspconfig").systemd_ls.setup({})
-		-- require("neodev").setup({
+		local configs = require("lspconfig.configs")
+		if not configs.systemd_ls then
+			configs.systemd_ls = {
+				default_config = {
+					cmd = { "systemd-language-server" },
+					filetypes = { "systemd" },
+					root_dir = function()
+						return nil
+					end,
+					single_file_support = true,
+					settings = {},
+				},
+				docs = {
+					description = [[]],
+				},
+			}
+		end
+
+		require("lspconfig").systemd_ls.setup({})
 		-- 	-- add any options here, or leave empty to use the default settings
 		-- })
 		vim.keymap.set("n", ",e", "<cmd>lua vim.diagnostic.goto_next({float = true})<cr>")
@@ -67,7 +66,7 @@ return {
 		})
 
 		-- TSSERVER
-		require("lspconfig").tsserver.setup({
+		require("lspconfig").ts_ls.setup({
 			capabilities = capabilities,
 			settings = {
 				completions = {
@@ -82,7 +81,7 @@ return {
 				plugins = {
 					{
 						name = "@vue/typescript-plugin",
-						location = "/home/vilanele/.npm/lib/node_modules/@vue/typescript-plugin",
+						location = "/home/vilanele/.npm-global/lib/node_modules/@vue/typescript-plugin",
 						languages = { "vue" },
 					},
 				},
@@ -94,17 +93,18 @@ return {
 				"vue",
 			},
 		})
-		-- require("lspconfig").volar.setup({
-		-- 	capabilities = capabilities,
-		-- 	init_options = {
-		-- 		typescript = {
-		-- 			tsdk = "/home/vilanele/.npm/lib/node_modules/typescript/lib",
-		-- 			--       -- Alternative location if installed as root:
-		-- 			--       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-		-- 		},
-		-- 	},
-		-- 	--   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
-		-- })
+
+		require("lspconfig").volar.setup({
+			-- capabilities = capabilities,
+			init_options = {
+				typescript = {
+					tsdk = "/home/vilanele/.npm-global/lib/node_modules/typescript/lib",
+					--       -- Alternative location if installed as root:
+					--       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+				},
+			},
+			filetypes = { 'vue' }
+		})
 		-- lspconfig.tsserver.setup {}
 		-- require("lspconfig").volar.setup({})
 		-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
@@ -154,12 +154,13 @@ return {
 
 		-- EMMET
 		require("lspconfig").emmet_language_server.setup({
-			capabilities = capa,
+			capabilities = capabilities,
 			filetypes = {
 				"css",
 				"html",
 				"typescriptreact",
-				"javascriptreact"
+				"javascriptreact",
+				"vue"
 			}, -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
 			-- **Note:** only the options listed in the table are supported.
 			init_options = {

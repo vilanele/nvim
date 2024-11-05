@@ -208,7 +208,7 @@ return {
 		local live_grep = bt.live_grep
 
 		-- vim.keymap.set("n", ":", "<cmd>Telescope cmdline<cr>")
-		vim.keymap.set("n", ",,s", require("auto-session.session-lens").search_session, { noremap = true })
+		-- vim.keymap.set("n", ",,s", require("auto-session.session-lens").search_session, { noremap = true })
 		vim.keymap.set("n", ",r", "<cmd>Telescope neoclip<cr>")
 		vim.keymap.set("n", ",g", function()
 			live_grep()
