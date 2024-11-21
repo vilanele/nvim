@@ -34,9 +34,10 @@ return {
 		require 'lspconfig'.prolog_ls.setup {}
 
 		-- PYTHON
-		require("lspconfig").pyright.setup({
-			completion = false,
-		})
+		-- require("lspconfig").pyright.setup({
+		-- 	completion = false,
+		-- })
+		require'lspconfig'.basedpyright.setup{}
 		require('lspconfig').kotlin_language_server.setup({})
 		-- require("lspconfig").jedi_language_server.setup({
 		-- 	capabilities = capabilities,

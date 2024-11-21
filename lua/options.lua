@@ -8,16 +8,15 @@ vim.o.smartindent = false
 vim.o.background = "light"
 vim.o.foldenable = true
 vim.g.autoformat = false
-vim.g.tex_flavor = "latex"
+-- vim.g.tex_flavor = "latex"
 vim.g.termguicolors = true
 vim.opt.winbar = "global"
 vim.opt.laststatus = 3
 vim.o.clipboard = "unnamedplus"
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.cursorline = true
 vim.cmd([[colorscheme edge]])
 vim.cmd("hi Twilight ctermfg=8")
-
-
 
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = "*",

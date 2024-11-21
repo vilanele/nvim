@@ -24,9 +24,9 @@ M = {
 					hl_mode = "combine"
 				},
 				[require("luasnip.util.types").insertNode] = {
-					active = {
-						virt_text = { { "●", "blue" } }
-					},
+					-- active = {
+					-- 	virt_text = { { "●", "blue" } }
+					-- },
 					hl_mode = "combine"
 				}
 			},

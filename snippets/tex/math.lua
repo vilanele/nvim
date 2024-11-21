@@ -28,17 +28,16 @@ local newautosnip = function(trig, nodes, opts)
 	table.insert(autosnippets, s(trig, nodes, opts))
 end
 
-
 local in_mathzone = function()
 	-- The `in_mathzone` function requires the VimTeX plugin
-	return vim.fn['vimtex#syntax#in_mathzone']() == 1
+	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
 newautosnip(
 	"mm",
 	fmt(
 		[[
-            $<>$<>
+            $ <> $<>
         ]],
 		{ i(1), i(0) },
 		{ delimiters = "<>" }
@@ -165,7 +164,6 @@ newautosnip(
 	{ condition = in_mathzone }
 )
 
-
 newsnip(
 	"tilde",
 	fmt(
@@ -177,8 +175,6 @@ newsnip(
 	),
 	{ condition = in_mathzone }
 )
-
-
 
 newautosnip(
 	"sset",
