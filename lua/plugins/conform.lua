@@ -5,7 +5,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "black" },
+				-- python = { "black" },
 				vue = { "prettier" },
 				typescriptreact = { "prettier --tab-width 4" },
 				html = { "prettier --tab-width 4" },
