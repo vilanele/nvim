@@ -32,7 +32,10 @@ return {
 		-- Systemd
 		require("plugins.lsp.systemd_ls")
 		-- Python
-		require("plugins.lsp.pylsp")
+		-- require("plugins.lsp.pylsp")
+		require("plugins.lsp.pyright")
+		require("plugins.lsp.ruff")
+
 		-- Lua
 		require("plugins.lsp.lua_ls")
 		-- Typescript
@@ -43,6 +46,8 @@ return {
 		require("plugins.lsp.cssls")
 		-- HTML
 		require("plugins.lsp.html")
+		-- emmet
+		require("plugins.lsp.emmet_ls")
 		-- VIM
 		require("plugins.lsp.vimls")
 		-- C/C++/C#
@@ -51,5 +56,7 @@ return {
 		require("plugins.lsp.volar")
 		-- Prolog
 		require("plugins.lsp.prolog_ls")
+		-- Lates
+		require("plugins.lsp.texlab")
 	end,
 }
