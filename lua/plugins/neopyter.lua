@@ -7,7 +7,7 @@ return {
 			remote_address = "127.0.0.1:9001",
 			file_pattern = { "*.ju.*" },
 			on_attach = function(bufnr)
-				-- do some buffer keymap
+				vim.keymap.set("n", "<space>x", ":Neopyter run current<CR>")
 			end,
 			highlight = {
 				enable = true,
