@@ -96,8 +96,8 @@ newsnip(
 	"cl",
 	fmt(
 		[[
-      class <>(<>):
-        <>
+		class <>(<>):
+			<>
     ]],
 		{ i(1, "cname"), i(2), i(3, "pass") },
 		{ delimiters = "<>" }
@@ -135,9 +135,22 @@ newsnip(
 			def <>(self):
 				<>
         ]],
-		{ i(1, "name"), i(2, "body") },
+		{ i(1, "name"), i(2, "pass") },
 		{ delimiters = "<>" }
 	)
+)
+
+newsnip(
+    "clm",
+    fmt(
+        [[
+			@classmethod
+			def <>(cls):
+				<>
+        ]],
+        { i(1, "name"), i(2, "pass") },
+        { delimiters = "<>" }
+    )
 )
 
 newsnip(
@@ -160,6 +173,18 @@ newsnip(
 		<>
         ]],
 		{ i(0) },
+		{ delimiters = "<>" }
+	)
+)
+
+newsnip(
+	"init",
+	fmt(
+		[[
+			def __init__(self):
+				<>
+        ]],
+		{ i(1, "pass") },
 		{ delimiters = "<>" }
 	)
 )
