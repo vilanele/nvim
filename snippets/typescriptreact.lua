@@ -115,19 +115,19 @@ newautosnip(
 	)
 )
 
-newautosnip(
-	"ff",
-	fmt(
-		[[
-      let <> = function(<>){
-          <>
-      };
-      <>
-    ]],
-		{ i(1), i(2), i(3), i(0) },
-		{ delimiters = "<>" }
-	)
-)
+-- newautosnip(
+-- 	"ff",
+-- 	fmt(
+-- 		[[
+--       let <> = function(<>){
+--           <>
+--       };
+--       <>
+--     ]],
+-- 		{ i(1), i(2), i(3), i(0) },
+-- 		{ delimiters = "<>" }
+-- 	)
+-- )
 
 newsnip(
 	"al",

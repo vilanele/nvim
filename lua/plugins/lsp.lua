@@ -29,6 +29,9 @@ return {
 		vim.keymap.set("n", ",,e", "<cmd>lua vim.diagnostic.goto_prev({float =  true})<cr>")
 		vim.keymap.set("n", ",lf", vim.lsp.buf.format)
 		vim.keymap.set("n", ",la", vim.lsp.buf.code_action)
+		vim.keymap.set("n", ",lr", vim.lsp.buf.rename)
+		vim.keymap.set("n", ",lw", vim.lsp.buf.document_highlight)
+		vim.keymap.set("n", ",lc", vim.lsp.buf.clear_references)
 		vim.diagnostic.config({ virtual_text = false, float = { border = "rounded" } })
 
 		-- Systemd
