@@ -189,6 +189,64 @@ newsnip(
 	)
 )
 
+newsnip(
+    "adef",
+    fmt(
+        [[
+			async def <>():
+				<>
+        ]],
+        { i(1, "name"), i(2, "pass") },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "amet",
+    fmt(
+        [[
+			async def <>(self):
+				<>
+        ]],
+        { i(1, "name"), i(2, "pass") },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "main",
+    fmt(
+        [[
+			if __name__ == "__main__":
+				<>
+        ]],
+        { i(1, "pass") },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "ttt",
+    fmt(
+        [[
+            True<>
+        ]],
+        { i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "fff",
+    fmt(
+        [[
+            False<>
+        ]],
+        { i(0) },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets

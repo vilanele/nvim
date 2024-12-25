@@ -9,13 +9,13 @@ require("lspconfig").ts_ls.setup({
 		-- 	includeCompletionsWithSnippetText = true,
 		-- 	includeCompletionsForImportStatements = true,
 		-- },
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = "/home/vilanele/.npm-global/lib/node_modules/@vue/typescript-plugin",
-				languages = { "vue" },
-			},
-		},
+		-- plugins = {
+		-- 	{
+		-- 		name = "@vue/typescript-plugin",
+		-- 		location = "/home/vilanele/.npm-global/lib/node_modules/@vue/typescript-plugin",
+		-- 		languages = { "vue" },
+		-- 	},
+		-- },
 	},
 	filetypes = {
 		"javascript",

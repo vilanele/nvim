@@ -49,6 +49,7 @@ return {
 		require("plugins.lsp.bashls")
 		-- CSS
 		require("plugins.lsp.cssls")
+		require("plugins.lsp.cssmodules_ls")
 		-- HTML
 		require("plugins.lsp.html")
 		-- emmet
