@@ -31,11 +31,21 @@ M = {
 				}
 			},
 		})
+		function ReloadLuaSnip()
+			require("luasnip.loaders.from_lua").load({ paths = { "/home/vilanele/.config/nvim/snippets" } })
+			print("LuaSnip snippets reloaded!")
+		end
+
 		require("luasnip/loaders/from_vscode").lazy_load()
 		vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>luasnip-next-choice", {})
 		vim.api.nvim_set_keymap("s", "<C-j>", "<Plug>luasnip-next-choice", {})
 		vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>luasnip-prev-choice", {})
 		vim.api.nvim_set_keymap("s", "<C-k>", "<Plug>luasnip-prev-choice", {})
+		vim.api.nvim_set_keymap(
+			"n",
+			";s",
+			":lua ReloadLuaSnip()<CR>", {}
+		)
 		-- require('luasnip.loaders.from_snipmate').lazy_load({paths = "/home/vilanele/.config/nvim/snippets"})
 	end,
 }

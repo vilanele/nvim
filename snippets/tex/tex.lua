@@ -93,6 +93,125 @@ newsnip(
 	)
 )
 
+
+newsnip(
+    "nc",
+    fmt(
+        [[
+            \newcommand{<>}{<>}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "la",
+    fmt(
+        [[
+            \label{<>}
+        ]],
+        { i(1) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "def",
+    fmt(
+        [[
+			\begin{definition}
+			\label{def:<>}
+				<>
+			\end{definition}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+
+newsnip(
+    "lem",
+    fmt(
+        [[
+			\begin{lemma}
+			\label{lem:<>}
+				<>
+			\end{lemma}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+
+
+newsnip(
+    "theo",
+    fmt(
+        [[
+			\begin{theorem}
+			\label{th:<>}
+				<>
+			\end{theorem}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "pro",
+    fmt(
+        [[
+            \begin{proof}
+			\label{pr:<>}
+				<>
+			\end{proof}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "ali",
+    fmt(
+        [[
+			\begin{align}
+			\label{eq:<>}
+				<>
+			\end{align}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
+
+newsnip(
+    "te",
+    fmt(
+        [[
+            \text{<>}<>
+        ]],
+        { i(1), i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "tn",
+    fmt(
+        [[
+			\textnormal{<>}
+        ]],
+        { i(1) },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets

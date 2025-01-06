@@ -80,19 +80,19 @@ newsnip(
 	)
 )
 
-newautosnip(
+newsnip(
 	"in",
 	fmta(
 		[[
             \in <>
         ]],
 		{ i(0) },
-		{}
+		{ delimiters = "<>"}
 	),
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"set",
 	fmt(
 		[[
@@ -104,7 +104,7 @@ newautosnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"ge",
 	fmt(
 		[[
@@ -116,7 +116,7 @@ newautosnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"le",
 	fmt(
 		[[
@@ -152,7 +152,7 @@ newautosnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	{ trig = "ff" },
 	fmt(
 		[[
@@ -176,7 +176,7 @@ newsnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"sset",
 	fmt(
 		[[
@@ -212,7 +212,7 @@ newsnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"to",
 	fmt(
 		[[
@@ -224,7 +224,7 @@ newautosnip(
 	{ condition = in_mathzone }
 )
 
-newautosnip(
+newsnip(
 	"xx",
 	fmt(
 		[[
@@ -234,6 +234,28 @@ newautosnip(
 		{ delimiters = "<>" }
 	),
 	{ condition = in_mathzone }
+)
+
+newsnip(
+    "al",
+    fmt(
+        [[
+            \alpha<>
+        ]],
+        { i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "be",
+    fmt(
+        [[
+            \beta<>
+        ]],
+        { i(0) },
+        { delimiters = "<>" }
+    )
 )
 
 ---End---

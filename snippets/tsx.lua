@@ -419,6 +419,17 @@ newsnip(
 	)
 )
 
+newsnip(
+	"styles",
+	fmt(
+		[[
+            import styles from "<>"<>
+        ]],
+		{ i(1), i(0) },
+		{ delimiters = "<>" }
+	)
+)
+
 ---End---
 
 return snippets, autosnippets

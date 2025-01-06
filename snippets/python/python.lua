@@ -108,8 +108,8 @@ newsnip(
 	"ini",
 	fmt(
 		[[
-      def __init__(self<>):
-        <>
+		def __init__(self<>):
+    		<>
     ]],
 		{ i(1, ""), i(2, "pass") },
 		{ delimiters = "<>" }
@@ -132,10 +132,10 @@ newsnip(
 	"met",
 	fmt(
 		[[
-			def <>(self):
+			def <>(self<>):
 				<>
         ]],
-		{ i(1, "name"), i(2, "pass") },
+		{ i(1, "name"), i(2), i(3, "pass") },
 		{ delimiters = "<>" }
 	)
 )
@@ -243,6 +243,28 @@ newsnip(
             False<>
         ]],
         { i(0) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "TT",
+    fmt(
+        [[
+            True
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "FF",
+    fmt(
+        [[
+            False
+        ]],
+        {  },
         { delimiters = "<>" }
     )
 )
