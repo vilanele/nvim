@@ -122,6 +122,28 @@ newsnip(
     )
 )
 
+newsnip(
+    "Ui",
+    fmt(
+        [[
+            \U_i
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "Uib",
+    fmt(
+        [[
+            \overline{\U_i}
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets

@@ -165,7 +165,7 @@ newsnip(
     "pro",
     fmt(
         [[
-            \begin{proof}
+			\begin{proof}
 			\label{pr:<>}
 				<>
 			\end{proof}
