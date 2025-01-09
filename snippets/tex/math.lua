@@ -258,6 +258,39 @@ newsnip(
     )
 )
 
+newsnip(
+    "cap",
+    fmt(
+        [[
+            \cap
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "sseteq",
+    fmt(
+        [[
+            \subseteq
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "bigc",
+    fmt(
+        [[
+            \bigcup
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets

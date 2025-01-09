@@ -144,6 +144,17 @@ newsnip(
     )
 )
 
+newsnip(
+    "lm",
+    fmt(
+        [[
+            \LM
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets
