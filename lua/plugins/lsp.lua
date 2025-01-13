@@ -33,13 +33,17 @@ return {
 		vim.keymap.set("n", ",lw", vim.lsp.buf.document_highlight)
 		vim.keymap.set("n", ",lc", vim.lsp.buf.clear_references)
 		vim.diagnostic.config({ virtual_text = false, float = { border = "rounded" } })
-
+		require("neoconf").setup({
+			-- override any of the default settings here
+		})
 		-- Systemd
 		require("plugins.lsp.systemd_ls")
 		-- Python
 		-- require("plugins.lsp.pylsp")
 		require("plugins.lsp.ruff")
 		require("plugins.lsp.pyright")
+
+		require("plugins.lsp.jsonls")
 
 		-- Lua
 		require("plugins.lsp.lua_ls")

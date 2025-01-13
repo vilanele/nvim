@@ -212,6 +212,22 @@ newsnip(
     )
 )
 
+
+
+newsnip(
+    "ex",
+    fmt(
+        [[
+			\begin{example}
+			\label{<>}
+				<>
+			\end{example}
+        ]],
+        { i(1), i(2) },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets
