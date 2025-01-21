@@ -48,7 +48,7 @@ newautosnip(
 	"dd",
 	fmt(
 		[[
-        \[
+		\[
 			<>
 		\]
 		<>
@@ -292,6 +292,18 @@ newsnip(
 )
 
 
+
+
+newsnip(
+    "rr",
+    fmt(
+        [[
+            \R
+        ]],
+        { },
+        { delimiters = "<>" }
+    )
+)
 
 ---End---
 

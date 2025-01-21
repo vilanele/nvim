@@ -8,6 +8,7 @@ return {
 			file_pattern = { "*_ju.*" },
 			on_attach = function(bufnr)
 				vim.keymap.set("n", "<space>x", ":Neopyter run current<CR>")
+				vim.keymap.set("n", "<space>a", ":Neopyter kernel restartRunAll<CR>")
 			end,
 			highlight = {
 				enable = true,

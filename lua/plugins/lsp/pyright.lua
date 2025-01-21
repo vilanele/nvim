@@ -1,4 +1,5 @@
 require("lspconfig").pyright.setup({
+	filetypes = { "python"},
 	settings = {
 		pyright = {
 			-- Using Ruff's import organizer
