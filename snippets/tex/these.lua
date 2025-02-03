@@ -45,6 +45,39 @@ newsnip(
 )
 
 
+newsnip(
+    "lam",
+    fmt(
+        [[
+            \LaurentMonoid
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "pom",
+    fmt(
+        [[
+            \PositiveMonoid
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "cod",
+    fmt(
+        [[
+            (T_i)_{i \in I}
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets
