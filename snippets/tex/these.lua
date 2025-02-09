@@ -133,6 +133,116 @@ newsnip(
     )
 )
 
+newsnip(
+    "vi",
+    fmt(
+        [[
+            V_i
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "vii",
+    fmt(
+        [[
+            V_{i,<}
+        ]],
+        { },
+        { delimiters = "[]" }
+    )
+)
+
+newsnip(
+    "viif",
+    fmt(
+        [[
+            V_{i,<}(f)
+        ]],
+        {  },
+        { delimiters = "[]" }
+    )
+)
+
+newsnip(
+    "lmi",
+    fmt(
+        [[
+            \lm^{i}
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "lmif",
+    fmt(
+        [[
+            \lm^{i}(f)
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "lmig",
+    fmt(
+        [[
+            \lm^{i}(g)
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "Lm",
+    fmt(
+        [[
+            \LM
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "Lmi",
+    fmt(
+        [[
+            \LM^{i}
+        ]],
+        {  },
+        { delimiters = "[]" }
+    )
+)
+
+newsnip(
+    "Lmif",
+    fmt(
+        [[
+         	\LM^{i}(f)   
+        ]],
+        { },
+        { delimiters = "[]" }
+    )
+)
+
+newsnip(
+    "Lmig",
+    fmt(
+        [[
+            \LM^{i}(g)
+        ]],
+        { },
+        { delimiters = "[]" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets
