@@ -78,6 +78,61 @@ newsnip(
     )
 )
 
+newsnip(
+    "val",
+    fmt(
+        [[
+            \val
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "tal",
+    fmt(
+        [[
+            \TateAlgebra
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "Kbar",
+    fmt(
+        [[
+            \Kbar
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "pal",
+    fmt(
+        [[
+            \PolyhedralAlgebra
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "tall",
+    fmt(
+        [[
+            \TateAlgebraLogRadii
+        ]],
+        { },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets

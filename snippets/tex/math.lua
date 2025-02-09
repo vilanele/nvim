@@ -305,6 +305,61 @@ newsnip(
     )
 )
 
+newsnip(
+    "lr",
+    fmt(
+        [[
+            \left<>\right
+        ]],
+        { i(1) },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "min",
+    fmt(
+        [[
+            \min
+        ]],
+        { },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "max",
+    fmt(
+        [[
+            \max
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "nu",
+    fmt(
+        [[
+            \nu
+        ]],
+        {  },
+        { delimiters = "<>" }
+    )
+)
+
+newsnip(
+    "emp",
+    fmt(
+        [[
+            \emph{<>}
+        ]],
+        { i(1) },
+        { delimiters = "<>" }
+    )
+)
+
 ---End---
 
 return snippets, autosnippets
